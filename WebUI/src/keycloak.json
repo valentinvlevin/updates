@@ -1,0 +1,8 @@
+{
+  "realm": "updates",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk5BK0Uzs2dqSZ09I1TkO75MWohiDyg9zHZJVp1maVG1TR5p3Er0NiGa936yIv4aUg6KfYHtYwNNi59rPwDlqpPO/wnbVf+roj/eh8RxFM6UR90jDTW2SSkbb1lz0MtXasvAthxYujsSwCgkWBHlEwE4B3fvxAcdIB4Sf8pDArfcrdQkpAF11jZ57JdZCBjpeeVUpof+2c49P8OQ/i/yOFSgSOyIvLn9+BCG7fwdygjRA8oS2nxC3cD+GWb4p2OU5xNmJx3kGl9ng2nxGTg1YzNmgd555P895Aekh+rEk5CaDwjsvTSe9aJ3DqjZw2NLkrErrVZBGSeXiODAd1X3BXwIDAQAB",
+  "auth-server-url": "http://localhost:18080/auth",
+  "ssl-required": "external",
+  "resource": "updates_webUI",
+  "public-client": true
+}

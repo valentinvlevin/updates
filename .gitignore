@@ -1,0 +1,10 @@
+/DBBackup/
+__history
+dcu
+*.*~*
+*.dproj.local
+*.identcache
+*.tvsconfig
+*.vlb
+workspace.xml
+/Temp/

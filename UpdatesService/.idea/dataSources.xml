@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1069035578">
+    <data-source source="LOCAL" name="PostgreSQL - Updates@eduserver.dyndns.info" uuid="01c40930-bbaa-475a-93bd-b7b21424635f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://eduserver.dyndns.info:5432/Updates</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

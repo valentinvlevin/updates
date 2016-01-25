@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="org.keycloak:keycloak-core:1.7.0.Final" type="repository">
+    <properties maven-id="org.keycloak:keycloak-core:1.7.0.Final" />
+    <CLASSES>
+      <root url="jar://$M2_REPO$/org/keycloak/keycloak-core/1.7.0.Final/keycloak-core-1.7.0.Final.jar!/" />
+      <root url="jar://$M2_REPO$/org/keycloak/keycloak-common/1.7.0.Final/keycloak-common-1.7.0.Final.jar!/" />
+      <root url="jar://$M2_REPO$/org/bouncycastle/bcprov-jdk15on/1.50/bcprov-jdk15on-1.50.jar!/" />
+      <root url="jar://$M2_REPO$/org/bouncycastle/bcpkix-jdk15on/1.50/bcpkix-jdk15on-1.50.jar!/" />
+      <root url="jar://$M2_REPO$/org/codehaus/jackson/jackson-core-asl/1.9.9/jackson-core-asl-1.9.9.jar!/" />
+      <root url="jar://$M2_REPO$/org/codehaus/jackson/jackson-mapper-asl/1.9.9/jackson-mapper-asl-1.9.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

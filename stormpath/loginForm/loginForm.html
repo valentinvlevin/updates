@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form class="form-horizontal" ng-hide="accepted" ng-submit="loginFromCtrl.submit()">
+      <div class="form-group">
+        <label for="spUsername" class="col-xs-12 col-sm-4 control-label">Username</label>
+        <div class="col-xs-12 col-sm-4">
+          <input class="form-control" id="spUsername" ng-model="loginFromCtrl.formModel.username" placeholder="Username or Email" ng-disabled="posting">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="spPassword" class="col-xs-12 col-sm-4 control-label">Password</label>
+        <div class="col-xs-12 col-sm-4">
+          <input type="password" class="form-control" id="spPassword" ng-model="loginFromCtrl.formModel.password" placeholder="Password" ng-disabled="posting">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+          <p class="text-danger" ng-show="error" ng-bind="error"></p>
+          <button type="submit" class="btn btn-primary" ng-disabled="loginFromCtrl.posting">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="Updates" transaction-type="JTA">
+        <jta-data-source>java:jboss/datasources/updates</jta-data-source>
+
+        <class>kz.testcenter.updates.db.entities.Project</class>
+        <class>kz.testcenter.updates.db.entities.Update</class>
+        <class>kz.testcenter.updates.db.entities.UpdateReceiver</class>
+        <class>kz.testcenter.updates.db.entities.users.User</class>
+        <class>kz.testcenter.updates.db.entities.users.ProjectWriter</class>
+        <class>kz.testcenter.updates.db.entities.users.UpdateWriter</class>
+
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+
+        <properties>
+            <property name="hibernate-dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>

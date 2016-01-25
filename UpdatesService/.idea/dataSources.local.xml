@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - Updates@eduserver.dyndns.info" uuid="01c40930-bbaa-475a-93bd-b7b21424635f">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>Updates.public</schema-pattern>
+      <default-schemas>Updates.pg_catalog Updates.public</default-schemas>
+    </data-source>
+  </component>
+</project>

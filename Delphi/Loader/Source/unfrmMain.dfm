@@ -1,0 +1,310 @@
+object frmMain: TfrmMain
+  Left = 146
+  Top = 165
+  Caption = #1054#1073#1085#1086#1074#1083#1077#1085#1080#1103
+  ClientHeight = 346
+  ClientWidth = 650
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid: TDBGridEh
+    Left = 0
+    Top = 0
+    Width = 650
+    Height = 311
+    Align = alClient
+    AllowedOperations = []
+    DataSource = dsUpdates
+    DynProps = <>
+    Flat = True
+    IndicatorOptions = [gioShowRowIndicatorEh, gioShowRecNoEh]
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    OptionsEh = [dghFixed3D, dghHighlightFocus, dghClearSelection, dghDialogFind, dghShowRecNo, dghColumnResize, dghAutoFitRowHeight, dghExtendVertLines]
+    ReadOnly = True
+    TabOrder = 0
+    TitleParams.MultiTitle = True
+    Columns = <
+      item
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Desc'
+        Footers = <>
+        Title.Caption = #1054#1087#1080#1089#1072#1085#1080#1077
+        Width = 310
+      end
+      item
+        Alignment = taCenter
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'FileSize'
+        Footers = <>
+        Title.Caption = #1056#1072#1079#1084#1077#1088
+        Width = 70
+      end
+      item
+        Alignment = taCenter
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'sStatus'
+        Footers = <>
+        Title.Caption = #1057#1090#1072#1090#1091#1089
+        Width = 237
+        OnAdvDrawDataCell = DBGrid1Columns1AdvDrawDataCell
+      end>
+    object RowDetailData: TRowDetailPanelControlEh
+    end
+  end
+  object pnlBottom: TPanel
+    Left = 0
+    Top = 311
+    Width = 650
+    Height = 35
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    object btnDownloadUpdate: TBitBtn
+      Left = 12
+      Top = 6
+      Width = 165
+      Height = 25
+      Action = cmDownload
+      Caption = #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103
+      DoubleBuffered = True
+      Glyph.Data = {
+        36060000424D3606000000000000360000002800000020000000100000000100
+        1800000000000006000000000000000000000000000000000000C9AEFFC9AEFF
+        C9AEFFC9AEFFC9AEFF555676555576C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9
+        AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF
+        C9AEFFC9AEFF595C6F734D0073540059596FC9AEFFC9AEFFC9AEFFC9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF94957B95967CC9
+        AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF
+        736600637133537141A13A009336005F7D415D67337D7300C9AEFFC9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF969870B9B9ACC0C0B383838388898277
+        75B07977A4848572FFFFF6C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF898C00
+        C24F07984100953B00B56605B866058F3B00A34600BC48077B8900C9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFAEB0758D8D8D8484848484849090909090908A
+        8A838C8C868A8A8A848471C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF464F93
+        995500C26A02C06A02C86300C56200BF6A01C56D037D46004D5293C9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF9293869090909090908F8F8F8F8F8F90
+        9090919191808080EDEEDAC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF657E00
+        9E470ACD6E01B95F195F8200768B10CF6B24CE700190420C698400C9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFF9FA07F8A8A8A919191909090888887908F8F94
+        94949292928989897D7D7DFFFFF6C9AEFFC9AEFFC9AEFFC9AEFF826900EA7C38
+        E1902CE88D2C5D7400C9AEFFC9AEFF8B8C1DE28926E6932CEC7C3A7B6700C9AE
+        FFC9AEFFC9AEFFC9AEFFA5A7799A9A9A9C9C9C9C9C9C858484FFFFFFBCC5C992
+        92919A9A9A9C9C9C9A9A9A7F8073C9AEFFC9AEFFC9AEFFC9AEFF897C00B46E26
+        EC9A4AF5A2446E6B17C43D81BF3385988537EF9E41E99648AB642D757B00C9AE
+        FFC9AEFFC9AEFFC9AEFFA9AB7D979791A0A0A0A2A2A28A8A8AD2D1D1D6D5D592
+        9292A0A0A0A0A0A093939382827BD7D8FFC9AEFFC9AEFFC9AEFFC9AEFF5E712F
+        9E6927F6B05FF8AB67897D329A863DFBAB62FBB3617E501E7FA200E92CBD7D8F
+        00C9AEFFC9AEFFC9AEFFC9AEFF7775A9969690A7A7A7A7A7A7909090939393A6
+        A6A6A8A8A88C8C8C909090D1D4D57A7A73FFFFF5C9AEFFC9AEFFC9AEFF5C6421
+        D08C5DFFCA86FDC380F9BB74F9BB74FFC784FFC682CB8E61101B005766000000
+        2E8E9000423E7FC9AEFFC9AEFF7A78A0A2A39CB0B0B0ADADADABABABABABABAE
+        AEAEAEAEAEA0A0A07C7C7C8686867A7A7A808080E1E2C8C9AEFFC9AEFF6A6809
+        F0A3738E631990681AFFCC9AF9C193795210B28332D38B6A151B061C1C383C3C
+        4F454564606100C9AEFFC9AEFF848396B1B19E97978A98988BB1B1B1AFAFAF88
+        88889FA093A0A0A07D7D7D8282828B8B8B8F8F8F7B837BFFFFFFC9AEFFC9AEFF
+        4B535A5052703A4577E1AD8FBC8A776472214E50802A3514626179656500A3A3
+        0B63636B888871686716C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFB1B1A49C9C9CCB
+        CCABC9AEFF8B8B7E9797978C8C8C9A9A9A9595959A9A9AADB6A7C9AEFFC9AEFF
+        C9AEFFC9AEFFC9AEFF897C00807400C9AEFFC9AEFF9495008B8BA78080707373
+        2CBCBCD573733B72710FC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFA5A679A2A476C9
+        AEFFC9AEFFA2A383A3A3A39C9C9C939393B1B1B19898926E6CA0C9AEFFC9AEFF
+        C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF61602A848438B1B1B3B9B9
+        BEBDBECE757700C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9
+        AEFFC9AEFF81809AA3A490ACACACAFAFAFB4B4AE9B9D76C9AEFFC9AEFFC9AEFF
+        C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF534F66888A0D7C7D
+        0064630DC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9
+        AEFFC9AEFFC9AEFF5A56BEA6A7869D9E847C7A9BC9AEFFC9AEFFC9AEFFC9AEFF
+        C9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AE
+        FFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9
+        AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFFC9AEFF}
+      NumGlyphs = 2
+      ParentDoubleBuffered = False
+      TabOrder = 0
+    end
+    object pnlExit: TPanel
+      Left = 510
+      Top = 0
+      Width = 140
+      Height = 35
+      Align = alRight
+      BevelOuter = bvNone
+      TabOrder = 1
+      object btnCancel: TBitBtn
+        Left = 32
+        Top = 6
+        Width = 97
+        Height = 25
+        Caption = #1047#1072#1082#1088#1099#1090#1100
+        DoubleBuffered = True
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          1800000000000003000000000000000000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFEFFFFFFFFE5CBEF7D40F3A37BFAD1BCFEF6F2FFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F7F7F2F2F4F5C998EB
+          5200E84C00E9560BEC6927F19060F6BA9AFAE3D8F4F5F7FEFEFEFFFFFFFFFFFF
+          FAFBFCFFFFFF8E9FBC0D1032845624F96817E6540CE9560BE85206E74C00EC4F
+          00D85010394E74F0F7FCFFFFFFFEFEFFF9FAFCFFFFFF889BBC0001267C4D1AF9
+          6615E55007E9570DE9580EE85911EE5B11D94D0C2E456EEFF7FBFFFFFFFFFFFF
+          FFFFFEFFFFFF8FA6C101072D7F501EFC7F38E55D1AE9560CE9560DE95710ED5A
+          0FDB5111334E76EFF7FBF7F7FDE2E2F7EAEAF7938FE83F56B900152B7B4E1EFF
+          9150F1793FEC7031EA5B14E9570FEE5A11DB521235527BEFF6FB9494E66060E2
+          5758E84B4AE6595DF1091A627F4D18D9976DAA6C4AF68046EC763CE95D17ED59
+          10DB5515365781EEF6FA8484E29B9BF39596FB797AF98986FF1A21937C4D1AE0
+          A57CC38A6DF5844CEE8450ED753CED5B13DC5518395C89EEF5FAC2C2F18A8AE3
+          9898E55F5BDA576ADD001A3B794E1CFFA56EF49061EF8E5EF08855EE8653F06C
+          2CDD55173B638FEEF5FAFFFFFFFFFFFFFFFFFFD8D4F6779ED500193A7D4F1EFE
+          AD7CED9871F29569F19061EF8C5DF28048DE5B1F3F6895EEF5F9FDFDFEFBFBFE
+          F7F8FCFFFFFF9FC6E600133C7E501EFFB586EFA07BF29D74F1986DF09266F48E
+          5CE06730406D99EDF5F9FFFFFFFFFFFFFBFCFEFDFDFF9BC5EA00183F7D4F1EFB
+          B98FEDA685F3A47EF29F77F19A70F5976AE1724042719EEDF5F9FFFFFFFFFFFF
+          FBFDFEFFFFFF9ECBF0001942815220FFD2A4FDB99AF8B090F3A784ED9E79F49F
+          77E37C4D4475A1EDF5F9FFFFFFFFFFFFFBFDFEFFFFFF9DCDF40125482718097D
+          5F40BA8965E9A97EFFB68DFFB78DFFAE86E77C4E4779A7EDF4F9FFFFFFFFFFFF
+          FBFDFEFFFFFF9CCEF6002C4F00000400000000020212100C503F2C846346C590
+          69DC87564479A8EDF3F8FFFFFFFFFFFFFBFDFEFFFFFF9CCCF11C74BA2F7BB52F
+          7CB82A78B62675B31C6DAE176BAB2E7BB53984BB3D89C4F3F7FB}
+        ModalResult = 2
+        ParentDoubleBuffered = False
+        TabOrder = 0
+      end
+    end
+  end
+  object dsUpdates: TDataSource
+    DataSet = md
+    Left = 28
+    Top = 81
+  end
+  object clHttp: TclHttp
+    Request = clHttpRequest
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
+    ProxySettings.Server = '127.0.0.1'
+    ProxySettings.Port = 8888
+    Left = 26
+    Top = 161
+  end
+  object clHttpRequest: TclHttpRequest
+    Header.Accept = '*/*'
+    Left = 105
+    Top = 161
+  end
+  object Actions: TActionList
+    Left = 208
+    Top = 160
+    object cmDownload: TAction
+      Caption = #1059#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103
+      OnExecute = cmDownloadExecute
+    end
+  end
+  object md: TMemTableEh
+    FieldDefs = <
+      item
+        Name = 'ID'
+        DataType = ftInteger
+        Precision = 15
+      end
+      item
+        Name = 'Desc'
+        DataType = ftWideString
+        Size = 200
+      end
+      item
+        Name = 'FileSize'
+        DataType = ftInteger
+        Precision = 15
+      end
+      item
+        Name = 'ReceivedBytes'
+        DataType = ftInteger
+        Precision = 15
+      end
+      item
+        Name = 'FileName'
+        DataType = ftString
+        Size = 50
+      end
+      item
+        Name = 'Ord'
+        DataType = ftSmallint
+        Precision = 15
+      end
+      item
+        Name = 'Status'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'sStatus'
+        DataType = ftString
+        Size = 100
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 104
+    Top = 80
+    object MemTableData: TMemTableDataEh
+      object DataStruct: TMTDataStructEh
+        object ID: TMTNumericDataFieldEh
+          FieldName = 'ID'
+          NumericDataType = fdtIntegerEh
+          AutoIncrement = False
+          currency = False
+          Precision = 15
+        end
+        object Desc: TMTStringDataFieldEh
+          FieldName = 'Desc'
+          StringDataType = fdtWideStringEh
+          Size = 200
+        end
+        object FileSize: TMTNumericDataFieldEh
+          FieldName = 'FileSize'
+          NumericDataType = fdtIntegerEh
+          AutoIncrement = False
+          currency = False
+          Precision = 15
+        end
+        object ReceivedBytes: TMTNumericDataFieldEh
+          FieldName = 'ReceivedBytes'
+          NumericDataType = fdtIntegerEh
+          AutoIncrement = False
+          currency = False
+          Precision = 15
+        end
+        object FileName: TMTStringDataFieldEh
+          FieldName = 'FileName'
+          StringDataType = fdtStringEh
+          Size = 50
+        end
+        object Ord: TMTNumericDataFieldEh
+          FieldName = 'Ord'
+          NumericDataType = fdtSmallintEh
+          AutoIncrement = False
+          currency = False
+          Precision = 15
+        end
+        object Status: TMTStringDataFieldEh
+          FieldName = 'Status'
+          StringDataType = fdtStringEh
+        end
+        object sStatus: TMTStringDataFieldEh
+          FieldName = 'sStatus'
+          StringDataType = fdtStringEh
+          Size = 100
+        end
+      end
+      object RecordsList: TRecordsListEh
+      end
+    end
+  end
+end
