@@ -1,11 +1,10 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-md-2 col-sm-3 sidebar-pf sidebar-pf-left" style="min-height: 384px">
+    <div class="col-md-2 col-sm-3 sidebar sidebar-left" style="min-height: 384px">
       <div class="nav-category">
-        <h2>Раздел</h2>
         <ul class="nav nav-pills nav-stacked">
-          <li ui-sref-active="active"><a ui-sref="main.content.projects"><span class="pficon pficon-project"></span>Проекты</a></li>
+          <li ng-class="{active: contentCtrl.state.is('main.content.projects') || contentCtrl.state.is('main.content.updates')};"><a ui-sref="main.content.projects"><span class="pficon pficon-project"></span>Проекты</a></li>
           <li ui-sref-active="active"><a ui-sref="main.content.users"><span class="pficon pficon-users"></span>Пользователи</a></li>
         </ul>
       </div>

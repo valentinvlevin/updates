@@ -63,7 +63,7 @@ public class ProjectService {
     }
 
     @GET
-    @Path("{projectId}")
+    @Path("/{projectId}")
     @RolesAllowed({"admin", "user"})
     public Response getProjectDetails(@PathParam("projectId") int projectId) {
         try {

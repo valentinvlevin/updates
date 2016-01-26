@@ -26,7 +26,6 @@ exports.paths = {
 exports.wiredep = {
   exclude: [
     "bower_components/dialogs/dist/dialogs-default-translations.js",
-    "bower_components/bootstrap/dist/css/bootstrap.css",
     "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css",
     "bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css",
     "bower_components/bootstrap-select/dist/css/bootstrap-select.css",

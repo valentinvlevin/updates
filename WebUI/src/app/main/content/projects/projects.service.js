@@ -30,22 +30,17 @@
       )
     }
 
-    function getUpdateList(projectId) {
-      return restangular.one('projects', projectId).all('updates').getList();
-    }
-
-    function getUpdateDetails(projectId, updateId) {
-      return restangular.one('projects', projectId).one('updates', updateId).get();
+    function deleteProject(projectId) {
+      return restangular.one('projects', projectId).remove();
     }
 
     return {
       getProjectList: getProjectList,
       getProjectDetails: getProjectDetails,
-      getUpdateList: getUpdateList,
-      getUpdateDetails: getUpdateDetails,
 
+      addProject: addProject,
       updateProject: updateProject,
-      addProject: addProject
+      deleteProject: deleteProject
     }
   }
 })();

@@ -19,7 +19,9 @@
             controller: 'HeaderController'
           },
           '': {
-            templateUrl: 'app/main/content/content.html'
+            templateUrl: 'app/main/content/content.html',
+            controller: 'ContentController',
+            controllerAs: 'contentCtrl'
           },
           'footer': {
             templateUrl: 'app/main/footer/footer.html'
@@ -53,14 +55,22 @@
           }
       })
       .state('main.content.updates', {
-        url: '/:idProject/updates',
+        url: '/projects/:idProject/updates',
+        templateUrl: 'app/main/content/projects/updateList/updateList.html',
+        controller: 'UpdateListController',
+        controllerAs: 'updatesCtrl',
+        resolve: {
+          updateList: function($stateParams, updatesService) {
+            return updatesService.getUpdateList($stateParams.idProject);
+          }
+        },
         auth: {
           restricted: true,
           groups: ['user', 'admin']
         }
       })
       .state('main.content.updateDetails', {
-        url: '/:idProject/updates/:idUpdate',
+        url: '/projects/:idProject/updates/:idUpdate',
         auth: {
           restricted: true,
           groups: ['user', 'admin']

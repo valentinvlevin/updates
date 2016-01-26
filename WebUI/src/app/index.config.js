@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, RestangularProvider, $translateProvider) {
+  function config($logProvider, toastrConfig, RestangularProvider, $translateProvider, dialogsProvider) {
 
     $translateProvider.translations('ru-RU',{
       DIALOGS_ERROR: "Ошибка",
@@ -25,7 +25,7 @@
       DIALOGS_NO: "Нет"
     });
 
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    //$translateProvider.useSanitizeValueStrategy('sanitize');
     $translateProvider.preferredLanguage('ru-RU');
     // Enable log
     $logProvider.debugEnabled(true);
@@ -38,17 +38,6 @@
     toastrConfig.progressBar = true;
 
     RestangularProvider.setBaseUrl('http://localhost:18080/updates/rest/v0');
-
-/*
-    RestangularProvider.addRequestInterceptor(function(element, operation, what) {
-      if (operation == 'put' || operation == 'post') {
-        element = $.param(element);
-        return element;
-      }
-    });
-*/
-
-
     RestangularProvider.addRequestInterceptor(function(elem, operation) {
       if (operation === "remove") {
         return null;
@@ -60,6 +49,8 @@
       Authorization: 'Basic '+btoa('admin:12345'),
       Accept: 'application/json;charset=UTF-8'
     });
+
+    dialogsProvider.setSize('md');
   }
 
 })();

@@ -1,15 +1,8 @@
 <div>
-  <table width="100%">
-    <tr>
-      <td><h3>Проекты</h3></td>
-      <td align="right" ><button class="btn btn-default" ng-click="projectsCtrl.addProject()">Создать</button></td>
-      <td align="right" ><button class="btn btn-default" ng-click="projectsCtrl.addProject()">Создать</button></td>
-      <td align="right" ><button class="btn btn-default" ng-click="projectsCtrl.addProject()">Создать</button></td>
-    </tr>
-    <tr>
-      <td colspan="2"><div ui-grid="projectsCtrl.gridOptions" ui-grid-auto-resize="true" ui-grid-selection></div></td>
-    </tr>
-  </table>
-  </br>
-  {{projectsCtrl.selectedRow}}
+  <div>
+    <button class="btn btn-default pull-right btn-block" style="width: 200px" ng-click="projectsCtrl.addProject()">Добавить новый проект</button>
+    <h3 style="margin-top: -5px">Проекты</h3>
+  </div>
+
+  <div ui-grid="projectsCtrl.gridOptions" ui-grid-auto-resize ui-grid-selection></div>
 </div>

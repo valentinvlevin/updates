@@ -21,7 +21,7 @@ import org.jboss.resteasy.plugins.providers.multipart.InputPart;
 import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 import org.apache.commons.lang3.math.NumberUtils;
 
-@Path("/updates")
+@Path("/projects/{project_id}/updates")
 @Produces("application/json;charset=UTF-8")
 @Stateless
 public class UpdatesService {
@@ -33,7 +33,7 @@ public class UpdatesService {
     private UriInfo uriInfo;
 
     @GET
-    @Path("/{project_id}")
+    @Path("/")
     @PermitAll
     public Response getUpdateList(@PathParam("project_id") int projectId) {
         try {
@@ -48,7 +48,7 @@ public class UpdatesService {
     }
 
     @GET
-    @Path("/{update_id}/update_info")
+    @Path("/{update_id}")
     @PermitAll
     public Response getUpdateInfo(@PathParam("update_id") int updateId) {
         try {
@@ -101,7 +101,7 @@ public class UpdatesService {
     }
 
     @POST
-    @Path("/{project_id}")
+    @Path("/")
     @RolesAllowed({"user", "admin"})
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response addUpdate(
@@ -156,7 +156,6 @@ public class UpdatesService {
             @PathParam("update_id") int updateId,
             MultipartFormDataInput input)
     {
-
         try {
             Map<String, List<InputPart>> uploadForm = input.getFormDataMap();
 

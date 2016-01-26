@@ -8,9 +8,13 @@
     vm.gridOptions = {
       data: projects,
       columnDefs: [
-        {name: 'id', displayName: 'ID', pinnedLeft: true},
-        {name: 'projectName', displayName: 'Проект', pinnedLeft: true},
-        {name: 'description', displayName: 'Описание', pinnedLeft: true}
+        {name: 'projectName', width: 200, displayName: 'Проект', pinnedLeft: true,
+          cellTemplate: '<div class="ui-grid-cell-contents"><a ui-sref="main.content.updates({\'idProject\': {{row.entity.id}}})">{{row.entity.projectName}}</a></div>'},
+        {name: 'description', displayName: 'Описание', pinnedLeft: true},
+        {name:' ', width: 90, enableSorting: false, enableColumnMenu: false,
+          cellTemplate: '<div><button class="btn btn-default btn-block btn-sm" ng-click="grid.appScope.editProject(row.entity.id)">Изменить</button></div>'},
+        {name:'  ', width: 90, enableSorting: false, enableColumnMenu: false,
+            cellTemplate: '<div></div><button class="btn btn-default btn-block btn-sm"ng-click="grid.appScope.deleteProject(row.entity)">Удалить</button></div>'}
       ],
 
       enableRowSelection: true,
@@ -18,22 +22,33 @@
       multiSelect: false,
       modifierKeysToMulriSelect: false,
       noUnselect: true,
-      onRegisterApi: onRegisterApi
+      onRegisterApi: onRegisterApi,
+      appScopeProvider: vm
     };
 
     vm.editProject = editProject;
     vm.addProject = addProject;
-    vm.selectedRow = {};
+    vm.deleteProject = deleteProject;
+
+    vm.haveSelectedRow = haveSelectedRow;
 
     function onRegisterApi(gridApi) {
       vm.gridApi = gridApi;
-      gridApi.selection.on.rowSelectionChanged($scope, function(row) {
-        vm.selectedRow = row.entity;
-      })
+      gridApi.core.on.rowsRendered($scope, onRowsRendered);
     }
 
-    function editProject(idProject) {
-      projectsService.getProjectDetails(idProject).then(
+    function onRowsRendered() {
+      if (vm.gridApi.grid.rows.length>0) {
+        vm.gridApi.selection.selectRow(vm.gridApi.grid.rows[0].entity)
+      }
+    }
+
+    function haveSelectedRow() {
+      return vm.gridApi.selection.getSelectedCount()>0;
+    }
+
+    function editProject(projectId) {
+      projectsService.getProjectDetails(projectId).then(
         function (projectData) {
           projectData.action = 'edit';
 
@@ -41,18 +56,17 @@
             $stateParams.editForm.templateUrl,
             $stateParams.editForm.controller,
             {projectData: projectData},
-            {keyboard: false, backdrop: false},
+            {keyboard: false, backdrop: false, size: 'lg'},
             $stateParams.editForm.controllerAs).result.then(
-            function() {
-              $state.reload($stateParams.name);
-            },
-            function(error) {
-              $log.log(error);
-            }
-          )
+              function () {
+                $state.reload($stateParams.name);
+              },
+              function (error) {
+                $log.log(error);
+              })
         },
         function (response) {
-          dialogs('Error', response);
+          dialogs.error('Error', response, {});
         }
       )
     }
@@ -63,15 +77,27 @@
         $stateParams.editForm.templateUrl,
         $stateParams.editForm.controller,
         {projectData: projectData},
-        {keyboard: false, backdrop: false},
+        {keyboard: false, backdrop: false, size: 'lg'},
         $stateParams.editForm.controllerAs).result.then(
-        function() {
-          $state.reload($stateParams.name);
-        },
-        function(error) {
-          $log.log(error);
-        }
-      )
+          function() {
+            $state.reload($stateParams.name);
+          },
+          function(error) {
+            $log.log(error);
+          });
+    }
+
+    function deleteProject(project) {
+      dialogs.confirm('Подтверждение', 'Удалить проект "'+project.description+"?", {}).result.then(
+        function () {
+          projectsService.deleteProject(project.id).then(
+            function() {
+                $state.reload($stateParams.name);
+            },
+            function(response) {
+              dialogs.error('Ошибка', response, {});
+            });
+        });
     }
 
   }
